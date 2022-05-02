@@ -3,6 +3,7 @@ package com.matteoputti.diceroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         diceImage.contentDescription = diceRoll.toString()
         when(diceRoll)
         {
-            1->diceImage.setImageResource(R.drawable.dice_1)
+            1-> { diceImage.setImageResource(R.drawable.dice_1)
+              val toast = Toast.makeText(applicationContext,"You win!",Toast.LENGTH_SHORT)
+                toast.show()
+            }
             2->diceImage.setImageResource(R.drawable.dice_2)
             3->diceImage.setImageResource(R.drawable.dice_3)
             4->diceImage.setImageResource(R.drawable.dice_4)
